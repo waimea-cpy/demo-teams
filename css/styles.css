@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+:root {
+    --accent-col:     #00838f;
+    --accent-light:   #00bcd4;
+    --accent-lighter: #e0f7fa;
+
+    --contrast: #f44336;
+
+    --back-main:  #455a64;
+    --back-card:  #fff;
+    --back-panel: #263238f0;
+
+    --text-col: #263238;
+    --text-inv: #fff;
+
+    --shadow:       0 0.25rem 0.5rem #00000080;
+    --shadow-small: 0 0.1rem 0.2rem #00000080;
+
+
+    --good: #33691e;
+    --bad:  #b71c1c;
+}
+
+
+/*** DEBUG *******************************************************/
+
+/* main, header, nav, div, ul, ol, li, h1, h2, h3 {
+    outline: 1px solid red;
+} */
+
+
+/*** GENERAL *******************************************************/
+
+html,
+body {
+    font-family: system-ui, sans-serif;
+    font-size:   14px;
+    background:  var(--back-main);
+    color:       var(--text-inv);
+
+    background-image: url('../images/back.jpg');
+
+    background-position:   center;
+    background-attachment: fixed;
+    background-size:       cover;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Anton', system-ui;
+    color:       var(--accent-col);
+}
+
+h2 {
+    font-size:     2.2rem;
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color:           var(--accent-col);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--contrast);
+}
+
+
+/*** HEADER *******************************************************/
+
+#main-header {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+    flex-wrap:       wrap;
+    gap:             1rem;
+
+    position: sticky;
+    top:      0;
+    z-index:  99;
+
+    padding:    1rem;
+    background: var(--accent-col);
+    color:      var(--text-col);
+    box-shadow: var(--shadow);
+}
+
+#main-header h1,
+#main-header h1 a {
+    font-size:       min(1.8rem, 5vw);
+    color:           var(--text-inv);
+    text-decoration: none;
+}
+
+#main-header h1 {
+    flex: 1;
+}
+
+#main-header h1 a {
+    display:     flex;
+    gap:         1rem;
+    align-items: center;
+}
+
+#user-info {
+    color:     var(--text-inv);
+    font-size: 1.3rem;
+    flex:      1;
+}
+
+
+
+/*** NAV *******************************************************/
+
+#main-nav img {
+    width:  2rem;
+    height: 2rem;
+}
+
+#main-nav input {
+    display: none;
+}
+
+#main-nav ul {
+    position:       fixed;
+    right:          0;
+    top:            0;
+    bottom:         0;
+    min-width:      10rem;
+    padding:        1rem;
+    background:     var(--back-panel);
+    box-shadow:     var(--shadow);
+    display:        flex;
+    flex-direction: column;
+    gap:            1rem;
+    z-index:        999;
+}
+
+#main-nav a {
+    color:           var(--text-inv);
+    font-size:       1.5rem;
+    text-decoration: none;
+}
+
+#main-nav a:hover {
+    text-decoration: underline;
+}
+
+#main-nav input:not(:checked)~ul {
+    display: none;
+}
+
+
+
+/*** MAIN *******************************************************/
+
+main {
+    padding: 1.5rem 1rem;
+
+    max-width:    80rem;
+    margin-left:  auto;
+    margin-right: auto;
+
+    min-height:      calc(100vh - 4rem);
+    display:         flex;
+    flex-direction:  column;
+    gap:             2rem;
+    align-items:     center;
+    justify-content: center;
+}
+
+main p {
+    text-align: center;
+}
+
+
+
+/*** CARDS *******************************************************/
+
+.card {
+    background:    var(--back-card);
+    color:         var(--text-col);
+    padding:       1rem;
+    border-radius: 0.5rem;
+    box-shadow:    var(--shadow);
+}
+
+.card h2 {
+    font-size:     1.8rem;
+    margin-bottom: 2rem;
+    color:         var(--accent-col);
+}
+
+.card h3 {
+    font-size:     1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card label {
+    display:        block;
+    font-size:      1.1rem;
+    font-style:     italic;
+    color:          var(--accent-light);
+    margin-bottom:  0.3rem;
+    padding-bottom: 0.2rem;
+}
+
+.card label:not(:first-of-type) {
+    margin-top: 1.5rem;
+}
+
+
+
+/*** TEAMS *******************************************************/
+
+#team-list {
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    gap:             2rem;
+    flex-wrap:       wrap;
+}
+
+
+li.team {
+    width:      16rem;
+    height:     20rem;
+    transition: all 250ms;
+}
+
+li.team:hover {
+    transform: scale(1.05);
+}
+
+div.team {
+    width: 24rem;
+}
+
+li.team a {
+    display:         block;
+    width:           100%;
+    height:          100%;
+    text-decoration: none;
+}
+
+div.team h3 {
+    margin-top: 1.5rem;
+}
+
+
+.team img {
+    aspect-ratio: 1;
+    object-fit:   cover;
+    width:        100%;
+}
+
+div.team img {
+    width:  80%;
+    margin: 0 auto;
+}
+
+.team p {
+    text-align:    left;
+    margin-bottom: 0.2rem;
+}
+
+.team p img {
+    display: inline-block;
+    width:   auto;
+}
+
+.team .member-list {
+    list-style-type: disc;
+    padding-left:    2rem;
+    font-size:       1.2rem;
+}
+
+
+/*** MEMBERS *******************************************************/
+
+#member-list {
+    width:           100%;
+    max-width:       50rem;
+    display:         flex;
+    flex-direction:  column;
+    justify-content: center;
+    align-items:     center;
+    gap:             1rem;
+}
+
+
+li.member {
+    width:       100%;
+    display:     flex;
+    gap:         2rem;
+    align-items: center;
+    padding:     0.5rem 1rem;
+}
+
+li.member p {
+    font-size:     1.5rem;
+    flex:          1;
+    text-align:    left;
+    margin-bottom: 0;
+}
+
+li.member p a {
+    display:         flex;
+    gap:             1rem;
+    align-items:     center;
+    justify-content: end;
+    text-decoration: none;
+}
+
+li.member p a img {
+    width: 4rem;
+}
+
+
+/*** FORMS *******************************************************/
+
+form {
+    margin:    0 auto;
+    width:     100%;
+    max-width: 30rem
+}
+
+input,
+textarea,
+select {
+    display:       block;
+    width:         100%;
+    font-size:     1.2rem;
+    padding:       0.3rem 0.5rem;
+    background:    var(--accent-lighter);
+    border:        1px solid var(--accent-light);
+    border-radius: 0.4rem;
+}
+
+input[type=number],
+input[type=date],
+input[type=submit] {
+    width: auto;
+}
+
+input[type=submit] {
+    background: var(--accent-light);
+    color:      var(--text-inv);
+    margin:     2rem 0 0.5rem auto;
+}
+
+textarea {
+    min-height: 8rem;
+}
+
+
+
+form.inline {
+    max-width:   100%;
+    margin:      1rem 0 0;
+    display:     flex;
+    align-items: flex-start;
+    gap:         0.5rem;
+}
+
+
+form.inline input,
+form.inline textarea {
+    font-size: 1em;
+}
+
+form.inline textarea {
+    min-height: 2rem;
+}
+
+form.inline input[type=submit] {
+    margin:     0;
+    align-self: flex-end;
+}
