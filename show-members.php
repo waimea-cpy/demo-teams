@@ -11,8 +11,8 @@
                    teams.name,
                    teams.logo
 
-            FROM teams
-            JOIN members ON members.team = teams.id
+            FROM members
+            JOIN teams ON members.team = teams.id
 
             ORDER BY teams.name ASC, members.surname ASC';
 

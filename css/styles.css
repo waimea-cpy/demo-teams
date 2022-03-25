@@ -256,13 +256,13 @@ div.team h3 {
 }
 
 
-.team img {
+.team img.logo {
     aspect-ratio: 1;
     object-fit:   cover;
     width:        100%;
 }
 
-div.team img {
+div.team img.logo {
     width:  80%;
     margin: 0 auto;
 }
@@ -282,6 +282,7 @@ div.team img {
     padding-left:    2rem;
     font-size:       1.2rem;
 }
+
 
 
 /*** MEMBERS *******************************************************/
@@ -324,6 +325,33 @@ li.member p a img {
     width: 4rem;
 }
 
+
+/*** NEW MEMBER ************************************************************/
+
+#new-toggle {
+    display: none;
+}
+
+#new-member img {
+    display:     block;
+    margin-left: auto;
+}
+
+#new-member input:not(:checked)~form {
+    display: none;
+}
+
+#new-member form {
+    margin-top: 1rem;
+}
+
+#new-member form h4 {
+    margin-bottom: 0.75rem;
+}
+
+#new-member form label {
+    margin-top: 0.3rem;
+}
 
 /*** FORMS *******************************************************/
 

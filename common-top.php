@@ -30,7 +30,7 @@
                 <label for="toggle"><img src="images/close.svg"></label>
 
                 <li><a href="index.php">Team List</a></li>
-                <li><a href="list-members.php">Team Member List</a></li>
+                <li><a href="show-members.php">Team Member List</a></li>
                 
                 <li><a href="form-new-team.php">New Team</a></li>
                 <li><a href="form-new-member.php">New Team Member</a></li>
